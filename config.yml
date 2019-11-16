@@ -1,0 +1,14 @@
+---
+name: default project
+version: 0.0.1
+description: description
+author: me@me.com
+openapi: openapi.yaml
+auth: rfc6749
+services:
+  ios:
+    bin_path: ~/.cdd/services/cdd-swift
+    template_path: ~/.cdd/iOS
+    project_path: "./iOS"
+    component_file: cddTemplate/Source/API/APIModels.swift
+    requests_file: cddTemplate/Source/API/APIRequests.swift
