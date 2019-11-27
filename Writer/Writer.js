@@ -143,9 +143,9 @@ var Writer;
         if (type == "Float") {
             return ts.createKeywordTypeNode(ts.SyntaxKind.NumberKeyword);
         }
-        if (type == "Int") {
-            return ts.createTypeReferenceNode("Int", []);
-        }
+        // if (type == "Int") {
+        //   return ts.createTypeReferenceNode("Int",[])
+        // }
         return ts.createTypeReferenceNode(type, []);
     }
     function makeVar(variable) {

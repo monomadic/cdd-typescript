@@ -19,6 +19,7 @@ export module Writer {
       write(fileName,newFile)
     }
     export function insertModel(model: Project.Model, fileName: string) {
+
       var resStatements: ts.Statement[] = []
       const file = sourceFile(fileName)
       file.statements.forEach(function(statement) {
@@ -49,6 +50,7 @@ export module Writer {
       write(fileName,newFile)
     }
     export function updateModel(model: Project.Model, fileName: string) {
+      
       var resStatements: ts.Statement[] = []
       const file = sourceFile(fileName)
       const decl = makeModel(model)
@@ -177,9 +179,9 @@ export module Writer {
         if (type == "Float") {
           return ts.createKeywordTypeNode(ts.SyntaxKind.NumberKeyword)
         }
-        if (type == "Int") {
-          return ts.createTypeReferenceNode("Int",[])
-        }
+        // if (type == "Int") {
+        //   return ts.createTypeReferenceNode("Int",[])
+        // }
 
         return ts.createTypeReferenceNode(type,[])
       }

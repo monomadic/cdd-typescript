@@ -23,31 +23,33 @@ else {
       break
     }
     case "delete-request": {
-      Writer.deleteClass(process.argv[3],process.argv[4])
+      Writer.deleteClass(process.argv[4],process.argv[3])
       break
     }
     case "delete-model": {
-      Writer.deleteClass(process.argv[3],process.argv[4])
+      Writer.deleteClass(process.argv[4],process.argv[3])
       break
     }
     case "insert-model": {
-      const model = JSON.parse(process.argv[4])
-      Writer.insertModel(model,process.argv[3])
+      const model = JSON.parse(process.argv[4]) 
+      
+      Writer.insertModel(Project.normalizeModelType(model),process.argv[3])
       break
     }
     case "update-model": {
       const model = JSON.parse(process.argv[4])
-      Writer.updateModel(model,process.argv[3])
+
+      Writer.updateModel(Project.normalizeModelType(model),process.argv[3])
       break
     }
     case "insert-request": {
       const request = JSON.parse(process.argv[4])
-      Writer.insertRequest(request,process.argv[3])
+      Writer.insertRequest(Project.normalizeRequestType(request),process.argv[3])
       break
     }
     case "update-request": {
       const request = JSON.parse(process.argv[4])
-      Writer.updateRequest(request,process.argv[3])
+      Writer.updateRequest(Project.normalizeRequestType(request),process.argv[3])
       break
     }
 

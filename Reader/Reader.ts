@@ -148,11 +148,9 @@ export module Reader {
               return ""
             }
             case ts.SyntaxKind.ArrayType: {
-      
               const obj = type as ts.ArrayTypeNode
               if (obj != undefined) {
                 return "[" + parseType(obj.elementType) + "]"
-      
               }
               return ""
             }
