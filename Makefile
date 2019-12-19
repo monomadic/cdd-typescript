@@ -1,5 +1,7 @@
-install:
+build:
 	tsc main.ts
+
+install: build
 	rm -rf ~/.cdd/bin/typescript
 	cp -R ../cdd-typescript ~/.cdd/bin/typescript
 	echo '#!/bin/sh\nnode ~/.cdd/bin/typescript/main.js $$@' > ~/.cdd/bin/cdd-typescript
